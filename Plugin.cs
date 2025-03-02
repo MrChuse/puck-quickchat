@@ -23,6 +23,7 @@ public class Plugin : BasePlugin
     public static InputAction alpha2Action;
     public static InputAction alpha3Action;
     public static InputAction alpha4Action;
+    public static InputAction slashAction;
     public static ConfigEntry<string>[,] chat_table;
 
     static String[][] chat_table_default = [
@@ -44,6 +45,9 @@ public class Plugin : BasePlugin
         alpha3Action.Enable();
         alpha4Action = new InputAction(binding: "<keyboard>/4");
         alpha4Action.Enable();
+        slashAction = new InputAction(binding: "<keyboard>/slash");
+        slashAction.Enable();
+        
 
         chat_table = new ConfigEntry<string>[4,4];
         for (int i = 0; i < 4; i++)
