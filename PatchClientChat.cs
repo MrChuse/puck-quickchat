@@ -23,12 +23,6 @@ public class PatchClientChat
         static int btn2 = -1;
         static float time_of_last_press=0;
 
-        static String[][] chat_table = [
-            ["I got it!", "Centering!", "Take the shot!", "Defending..."],
-            ["Nice one!", "Great pass!", "Thanks!", "What a save!"],
-            ["Holy cow!", "Noooo!", "Close one!", "Calculated."],
-            ["@#$%!", "No problem.", "This is Rocket League!", "Sorry!"]
-        ];
         static void Postfix()
         {
             if (Plugin.chat.isFocused) return;
@@ -78,7 +72,7 @@ public class PatchClientChat
                 btn2 = -1;
             }
             if (btn1 != -1 && btn2 != -1){
-                Plugin.chat.Client_SendClientChatMessage($"{chat_table[btn1-1][btn2-1]}");
+                Plugin.chat.Client_SendClientChatMessage($"{Plugin.chat_table[btn1-1,btn2-1].BoxedValue}");
                 btn1 = -1;
                 btn2 = -1;
             }
