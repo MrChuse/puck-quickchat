@@ -31,6 +31,8 @@ public class PatchClientChat
         ];
         static void Postfix()
         {
+            if (Plugin.chat.isFocused) return;
+
             if (Plugin.alpha1Action.WasPressedThisFrame()){
                 if (btn1 == -1 && Time.time - time_of_last_press > 0.05){
                     btn1 = 1;
